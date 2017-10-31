@@ -1,43 +1,32 @@
-<div id="glossary">
-    <div id="app">
-<!--        <input type="search" v-model="search">-->
-        <ul>
-<!--
-            <li 
-                v-for="term in terms" 
-                v-if="term.toLowerCase().indexOf(search.toLowerCase()) != -1">
-                <a :href="'term/'+term">{{ term }}</a>
-            </li>
--->
-            <?php foreach($data as $term): ?>
-            <li>
-                <a href='term/<?php echo $term["title"]; ?>'><?php echo $term["title"]; ?></a>
-                <a href="../php/delete.php?term=<?php echo $term['id']; ?>" class="delete">del</a>
-            </li>
-            <?php endforeach; ?>
-        </ul>
-        
-        <hr>
-        <h2>new</h2>
-        <form action="../php/newterm.php" method="post">
-            <input name="title" type="text" placeholder="title...">
-            <input name="text" type="text" placeholder="text...">
-            <input type="submit" value="new term">
-        </form>
+<div class="parent">
+    <div id="glossary">
+        <div id="app">
+    <!--        <input type="search" v-model="search">-->
+            <ul>
+    <!--
+                <li 
+                    v-for="term in terms" 
+                    v-if="term.toLowerCase().indexOf(search.toLowerCase()) != -1">
+                    <a :href="'term/'+term">{{ term }}</a>
+                </li>
+    -->
+                <?php foreach($data as $term): ?>
+                <li>
+                    <a href='term/<?php echo $term["title"]; ?>' class="term"><?php echo $term["title"]; ?></a>
+                    <a href="../php/delete.php?term=<?php echo $term['id']; ?>" class="delete">del</a>
+                </li>
+                <?php endforeach; ?>
+            </ul>
+
+            <h2>new term:</h2>
+            <form action="../php/newterm.php" method="post">
+                <input name="title" type="text" placeholder="title..." autocomplete="off">
+                <input name="text" type="text" placeholder="text..." autocomplete="off">
+                <input type="submit" value="submit">
+            </form>
+        </div>
     </div>
 </div>
    
-<script>
-    var app = new Vue({
-        el: "#app",
-        data: {
-            search: '',
-            terms: ['one', 'two', 'three'],
-        },
-        methods: { },
-        created: function() { console.log("created"); }
-    })
-</script>
 </body>
-
 </html>
