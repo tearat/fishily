@@ -1,33 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <script src="../js/vue.js"></script>
-</head>
-
-<body>
+<div id="glossary">
     <div id="app">
-        <input type="text" v-model="search">
-        <li 
-            v-for="term in terms" 
-            v-if="term.toLowerCase().indexOf(search.toLowerCase()) != -1">
-            {{ term }}
-        </li>
+        <input type="search" v-model="search">
+        <ul>
+            <li 
+                v-for="term in terms" 
+                v-if="term.toLowerCase().indexOf(search.toLowerCase()) != -1">
+                <a :href="'term/'+term">{{ term }}</a>
+            </li>
+        </ul>
     </div>
-
-    <script>
-        var app = new Vue({
-            el: "#app",
-            data: {
-                search: '',
-                terms: ['one', 'two', 'three']
-            },
-            methods: {},
-            created: function() { console.log("created"); }
-        })
-    </script>
+</div>
+   
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            search: '',
+            terms: ['one', 'two', 'three']
+        },
+        methods: {},
+        created: function() { console.log("created"); }
+    })
+</script>
 </body>
 
 </html>

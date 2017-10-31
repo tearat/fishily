@@ -1,0 +1,6 @@
+RewriteEngine On
+ErrorDocument 404 /404.php
+RewriteRule    ^error$ error.php
+#
+RewriteRule    ^/$ index.php?page=index
+RewriteRule    ^term/([a-zA-Z0-9_-]+)$    index.php?page=term&term=$1

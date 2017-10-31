@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+    min-width: 200px;
+    max-width: 960px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+/**/
+
+#glossary {
+    background-color: rgba(0,0,0,0.125);
+    text-align: center;
+    padding: 25px 50px;
+    border-radius: 10px;
+}
+
+#glossary input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#glossary ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#glossary li {
+    margin: 0;
+    padding: 0;
+    background-color: cornsilk;
+    
+    transition: 0.25s ease;
+}
+
+#glossary li:hover {
+    background-color: burlywood;
+    cursor: pointer;
+}
+
+#glossary a {
+    padding: 10px 0 10px 20px;
+    display: block;
+    color: #222;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+/**/
+
+#term {
+    background-color: rgba(0,0,0,0.125);
+    text-align: center;
+    padding: 25px 50px;
+    border-radius: 10px;
+}
+
+#term .back {
+    display: inline-block;
+    background-color: firebrick;
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 30px;
+    transition: 0.25s ease;
+}
+
+#term .back:hover {
+    background-color: indianred;
+}
+
+#term hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#term h1 {
+    text-align: left;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+#term p {
+    text-align: left;
+}
