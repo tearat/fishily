@@ -23,17 +23,37 @@ class DATABASE
         return self::$_instance;
     }
     
-    // Загрузить юзверей
+    public function load_all()
+    {
+        $sql = "SELECT * FROM `terms`";
+        $result = mysqli_query($this->mysql, $sql);
+        while ($row = mysqli_fetch_assoc($result))
+        {
+            $data[] = $row;
+        }
+        return $data;
+    }
+    
     public function load_term($name)
     {
-    $sql = "SELECT * FROM terms WHERE title = '$name'";
-    $result = mysqli_query($this->mysql, $sql);
-    $data = mysqli_fetch_assoc($result);
-//    while ($row = mysqli_fetch_assoc($result))
-//    {
-//        $data[] = $row;
-//    }
-    return $data;
+        $sql = "SELECT * FROM `terms` WHERE title = '$name'";
+        $result = mysqli_query($this->mysql, $sql);
+        $data = mysqli_fetch_assoc($result);
+        return $data;
+    }
+    
+    public function new_term($title, $text)
+    {
+        $sql = "INSERT INTO `terms` (`title`, `text`) VALUES ('$title', '$text');";
+        $result = mysqli_query($this->mysql, $sql);
+        return $result;
+    }
+    
+    public function del_term($term)
+    {
+        $sql = "DELETE FROM `terms` WHERE `id` = '$term';";
+        $result = mysqli_query($this->mysql, $sql);
+        return $result;
     }
 }
 ?>

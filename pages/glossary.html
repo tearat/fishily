@@ -1,13 +1,29 @@
 <div id="glossary">
     <div id="app">
-        <input type="search" v-model="search">
+<!--        <input type="search" v-model="search">-->
         <ul>
+<!--
             <li 
                 v-for="term in terms" 
                 v-if="term.toLowerCase().indexOf(search.toLowerCase()) != -1">
                 <a :href="'term/'+term">{{ term }}</a>
             </li>
+-->
+            <?php foreach($data as $term): ?>
+            <li>
+                <a href='term/<?php echo $term["title"]; ?>'><?php echo $term["title"]; ?></a>
+                <a href="../php/delete.php?term=<?php echo $term['id']; ?>" class="delete">del</a>
+            </li>
+            <?php endforeach; ?>
         </ul>
+        
+        <hr>
+        <h2>new</h2>
+        <form action="../php/newterm.php" method="post">
+            <input name="title" type="text" placeholder="title...">
+            <input name="text" type="text" placeholder="text...">
+            <input type="submit" value="new term">
+        </form>
     </div>
 </div>
    
@@ -16,9 +32,9 @@
         el: "#app",
         data: {
             search: '',
-            terms: ['one', 'two', 'three']
+            terms: ['one', 'two', 'three'],
         },
-        methods: {},
+        methods: { },
         created: function() { console.log("created"); }
     })
 </script>

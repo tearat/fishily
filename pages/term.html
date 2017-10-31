@@ -6,5 +6,16 @@
     <hr>
     <img src="/img/<?php echo $data['img']; ?>" alt="">
 </div>
+
+<script>
+    document.onkeydown = function(events) 
+    { 
+        if ( events.keyCode == 27 ) 
+        { 
+            window.location.href = '/'; 
+        }
+    };
+</script>
+
 </body>
 </html>

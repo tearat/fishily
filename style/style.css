@@ -34,22 +34,45 @@ body {
     margin: 0;
     padding: 0;
     background-color: cornsilk;
-    
     transition: 0.25s ease;
-}
-
-#glossary li:hover {
-    background-color: burlywood;
-    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr 100px;
 }
 
 #glossary a {
-    padding: 10px 0 10px 20px;
-    display: block;
+    padding: 10px 20px 10px 20px;
     color: #222;
     font-size: 20px;
     text-transform: uppercase;
     text-decoration: none;
+}
+
+#glossary a:hover {
+    background-color: burlywood;
+}
+
+#glossary .delete {
+    background-color: peachpuff;
+}
+
+#glossary .delete:hover {
+    background-color: brown;
+    color: white;
+}
+
+#glossary form {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#glossary form input {
+    width: 840px;
+    background-color: #eee;
+}
+
+#glossary form input[type="submit"] {
+    margin-top: 20px;
+    width: 860px;
 }
 
 /**/
