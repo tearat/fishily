@@ -3,4 +3,6 @@ ErrorDocument 404 /404.php
 RewriteRule    ^error$ error.php
 #
 RewriteRule    ^/$ index.php?page=index
-RewriteRule    ^term/([a-zA-Z0-9_-]+)$    index.php?page=term&term=$1
+# RewriteRule    ^term/([a-zA-Z0-9_-]+)$    index.php?page=term&term=$1
+RewriteRule    ^term/([0-9_-]+)$    index.php?page=term&id=$1
+RewriteRule    ^tag/([a-zA-Z0-9_-]+)$    index.php?page=bytag&tag=$1

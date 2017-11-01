@@ -6,7 +6,7 @@ class DATABASE
     private $host = 'localhost';
     private $user = 'root';
     private $password = '';
-    private $db_name = 'glossary';
+    private $db_name = 'fishily';
     
     function __construct()
     {
@@ -25,7 +25,7 @@ class DATABASE
     
     public function load_all()
     {
-        $sql = "SELECT * FROM `terms`";
+        $sql = "SELECT * FROM `posts`";
         $result = mysqli_query($this->mysql, $sql);
         while ($row = mysqli_fetch_assoc($result))
         {
@@ -34,9 +34,20 @@ class DATABASE
         return $data;
     }
     
-    public function load_term($name)
+    public function load_by_tag($tag)
     {
-        $sql = "SELECT * FROM `terms` WHERE title = '$name'";
+        $sql = "SELECT * FROM `posts` WHERE `tag` = '$tag'";
+        $result = mysqli_query($this->mysql, $sql);
+        while ($row = mysqli_fetch_assoc($result))
+        {
+            $data[] = $row;
+        }
+        return $data;
+    }
+    
+    public function load_term($id)
+    {
+        $sql = "SELECT * FROM `posts` WHERE id = '$id'";
         $result = mysqli_query($this->mysql, $sql);
         $data = mysqli_fetch_assoc($result);
         return $data;
@@ -44,14 +55,14 @@ class DATABASE
     
     public function new_term($title, $text)
     {
-        $sql = "INSERT INTO `terms` (`title`, `text`) VALUES ('$title', '$text');";
+        $sql = "INSERT INTO `posts` (`title`, `text`) VALUES ('$title', '$text');";
         $result = mysqli_query($this->mysql, $sql);
         return $result;
     }
     
     public function del_term($term)
     {
-        $sql = "DELETE FROM `terms` WHERE `id` = '$term';";
+        $sql = "DELETE FROM `posts` WHERE `id` = '$term';";
         $result = mysqli_query($this->mysql, $sql);
         return $result;
     }
