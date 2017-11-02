@@ -13,7 +13,7 @@
                 <li>
                     <a href='/term/<?php echo $term["id"]; ?>' class="post"><?php echo $term["date"]; ?> : <?php echo $term["title"]; ?></a>
                     <a href='/tag/<?php echo $term["tag"]; ?>' class="tag"><?php echo $term["tag"]; ?></a>
-                    <?php if( !empty($_COOKIE['session']) ): ?>
+                    <?php if( $_COOKIE['session'] == "45358c9f9a8737442795e6544bd7748952d011da3d821b7126446952f31c6b7a"): ?>
                         <a href="../php/delete.php?term=<?php echo $term['id']; ?>" class="delete">del</a>
                     <?php endif; ?>
                 </li>
@@ -22,13 +22,13 @@
 
             <div class="auth">
                 <?php if( empty($_COOKIE['session']) ): ?>
-                <label>Auth:
-                <form action="../php/auth.php" method="post">
+                <form action="../php/auth.php" method="post" name="form1">
+                    <label>Auth:</label>
                     <input type="password" name="pass" autocomplete="off">
                 </form>
-                </label>
+                
                 <?php endif; ?>
-                <?php if( !empty($_COOKIE['session']) ): ?>
+                <?php if( $_COOKIE['session'] == "45358c9f9a8737442795e6544bd7748952d011da3d821b7126446952f31c6b7a" ): ?>
                     <a href="../php/logout.php" class="logout">logout</a>
                     <a href="/new" class="newpost">new post</a>
                 <?php endif; ?>

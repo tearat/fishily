@@ -32,7 +32,8 @@ a {
 }
 
 #index {
-    background-color: #eee;
+/*    background-color: #eee;*/
+    background-color: #222;
 }
 
 #index .logo {
@@ -119,22 +120,23 @@ a {
     font-weight: 700;
     display: grid;
     grid-template-columns: 1fr;
-}
-
-#index .auth label {
-    padding-left: 20px;
+    
+    margin-top: 25px;
 }
 
 #index .auth form {
-    display: inline-block;
+    padding-left: 20px;
+    display: grid;
+    grid-template-columns: 70px 1fr;
+}
+
+#index .auth label {
 }
 
 #index .auth input {
-    display: inline-block;
-    background-color: firebrick;
-    color: #eee;
+    display: inline;
+    background-color: #eee;
     border: none;
-    margin-left: 20px;
 }
 
 #index .auth .logout {
@@ -142,6 +144,10 @@ a {
     color: #eee;
     float: right;
     padding-right: 20px;
+}
+
+#index .auth .logout:hover {
+    filter: brightness(1.25);
 }
 
 #index .auth .newpost {
@@ -164,6 +170,7 @@ a {
     padding: 0;
     padding-left: 20px;
     background-color: #eee;
+    font-weight: 700;
 }
 
 #index .center {

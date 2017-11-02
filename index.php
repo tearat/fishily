@@ -2,8 +2,14 @@
 
     if ( $_GET["page"] == "new" )
     {
-        include "./pages/_head.html";
-        include "./pages/new.html";
+        if ( !empty($_COOKIE['session']) )
+        {
+            include "./pages/_head.html";
+            include "./pages/new.html";
+        }
+        else { 
+            header("location: /"); 
+        }
     }
     else if ( $_GET["page"] == "term" )
     {
