@@ -9,12 +9,12 @@
                     <h2>All posts</h2>
                 <?php endif; ?>
                 
-                <?php foreach($data as $key => $term): ?>
+                <?php foreach($data as $key => $post): ?>
                 <li>
-                    <a href='/term/<?php echo $term["id"]; ?>' class="post"><?php echo $term["date"]; ?> : <?php echo $term["title"]; ?></a>
-                    <a href='/tag/<?php echo $term["tag"]; ?>' class="tag"><?php echo $term["tag"]; ?></a>
+                    <a href='/post/<?php echo $post["id"]; ?>' class="post"><?php echo $post["date"]; ?> : <?php echo $post["title"]; ?></a>
+                    <a href='/tag/<?php echo $post["tag"]; ?>' class="tag"><?php echo $post["tag"]; ?></a>
                     <?php if( $_COOKIE['session'] == "45358c9f9a8737442795e6544bd7748952d011da3d821b7126446952f31c6b7a"): ?>
-                        <a href="../php/delete.php?term=<?php echo $term['id']; ?>" class="delete">del</a>
+                        <a href="../php/delete.php?post=<?php echo $post['id']; ?>" class="delete">del</a>
                     <?php endif; ?>
                 </li>
                 <?php endforeach; ?>

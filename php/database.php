@@ -45,7 +45,7 @@ class DATABASE
         return $data;
     }
     
-    public function load_term($id)
+    public function load_post($id)
     {
         $sql = "SELECT * FROM `posts` WHERE id = '$id'";
         $result = mysqli_query($this->mysql, $sql);
@@ -62,9 +62,9 @@ class DATABASE
         return $result;
     }
     
-    public function del_term($term)
+    public function del_post($post)
     {
-        $sql = "DELETE FROM `posts` WHERE `id` = '$term';";
+        $sql = "DELETE FROM `posts` WHERE `id` = '$post';";
         $result = mysqli_query($this->mysql, $sql);
         return $result;
     }

@@ -4,7 +4,7 @@
     {
         include "database.php";
         $database = new DATABASE;
-        $data = $database->del_term( $_GET["term"] );
+        $data = $database->del_post( $_GET["post"] );
     }
     header("location: /");
 

@@ -11,11 +11,11 @@
             header("location: /"); 
         }
     }
-    else if ( $_GET["page"] == "term" )
+    else if ( $_GET["page"] == "post" )
     {
         include "./php/database.php";
         $database = new DATABASE;
-        $data = $database->load_term($_GET["id"]);
+        $data = $database->load_post($_GET["id"]);
         include "./pages/_head.html";
         include "./pages/post.html";
     }
