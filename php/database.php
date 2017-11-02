@@ -53,9 +53,11 @@ class DATABASE
         return $data;
     }
     
-    public function new_term($title, $text)
+    public function new_post($tag, $title, $text)
     {
-        $sql = "INSERT INTO `posts` (`title`, `text`) VALUES ('$title', '$text');";
+        
+        $date = date("d.m.Y");
+        $sql = "INSERT INTO `posts` (`tag`, `title`, `body`, `date`) VALUES ('$tag', '$title', '$text', '$date');";
         $result = mysqli_query($this->mysql, $sql);
         return $result;
     }

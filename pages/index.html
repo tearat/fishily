@@ -12,20 +12,27 @@
                 <?php foreach($data as $key => $term): ?>
                 <li>
                     <a href='/term/<?php echo $term["id"]; ?>' class="post"><?php echo $term["date"]; ?> : <?php echo $term["title"]; ?></a>
-                    <a href='/tag/<?php echo $term["tag"]; ?>' class="tag"><?php echo $term["tag_title"]; ?></a>
-<!--                    <a href="../php/delete.php?term=<?php echo $term['id']; ?>" class="delete">del</a>-->
+                    <a href='/tag/<?php echo $term["tag"]; ?>' class="tag"><?php echo $term["tag"]; ?></a>
+                    <?php if( !empty($_COOKIE['session']) ): ?>
+                        <a href="../php/delete.php?term=<?php echo $term['id']; ?>" class="delete">del</a>
+                    <?php endif; ?>
                 </li>
                 <?php endforeach; ?>
             </ul>
 
-<!--
-            <h2>new term:</h2>
-            <form action="../php/newterm.php" method="post">
-                <input name="title" type="text" placeholder="title..." autocomplete="off">
-                <input name="text" type="text" placeholder="text..." autocomplete="off">
-                <input type="submit" value="submit">
-            </form>
--->
+            <div class="auth">
+                <?php if( empty($_COOKIE['session']) ): ?>
+                <label>Auth:
+                <form action="../php/auth.php" method="post">
+                    <input type="password" name="pass" autocomplete="off">
+                </form>
+                </label>
+                <?php endif; ?>
+                <?php if( !empty($_COOKIE['session']) ): ?>
+                    <a href="../php/logout.php" class="logout">logout</a>
+                    <a href="/new" class="newpost">new post</a>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </div>

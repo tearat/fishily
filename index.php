@@ -1,6 +1,11 @@
 <?php
 
-    if ( $_GET["page"] == "term" )
+    if ( $_GET["page"] == "new" )
+    {
+        include "./pages/_head.html";
+        include "./pages/new.html";
+    }
+    else if ( $_GET["page"] == "term" )
     {
         include "./php/database.php";
         $database = new DATABASE;

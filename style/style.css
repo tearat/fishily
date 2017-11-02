@@ -112,22 +112,48 @@ a {
     color: white;
 }
 
-#index form {
+#index .auth {
+    background-color: firebrick;
+    font-style: italic;
+    color: #eee;
+    font-weight: 700;
     display: grid;
     grid-template-columns: 1fr;
 }
 
-#index form input {
-    background-color: #eee;
+#index .auth label {
+    padding-left: 20px;
+}
+
+#index .auth form {
+    display: inline-block;
+}
+
+#index .auth input {
+    display: inline-block;
+    background-color: firebrick;
+    color: #eee;
     border: none;
-    padding-left: 10px;
+    margin-left: 20px;
 }
 
-#index form input[type="submit"] {
-    background-color: darkseagreen;
+#index .auth .logout {
+    text-align: right;
+    color: #eee;
+    float: right;
+    padding-right: 20px;
 }
 
-#index form input[type="submit"]:hover {
+#index .auth .newpost {
+    background-color: limegreen;
+    color: #eee;
+    font-size: 40px;
+/*    padding-left: 20px;*/
+    text-align: center;
+    background-color: royalblue;
+}
+
+#index .auth .newpost:hover {
     filter: brightness(1.25);
 }
 
@@ -169,4 +195,39 @@ a {
 
 #index .back:hover {
     background-color: indianred;
+}
+
+/*  NEW  */
+
+#index .submit {
+    background-color: forestgreen;
+    color: #eee;
+    font-style: italic;
+    display: block;
+    font-weight: 700;
+/*    padding-left: 20px;*/
+    font-size: 50px;
+    text-align: center;
+    border: none;
+}
+
+#index .submit:hover {
+    filter: brightness(1.25);
+}
+
+#index .newpost {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#index .newpost select {
+    padding-left: 20px;
+}
+
+#index .newpost input {
+    padding-left: 20px;
+}
+
+#index .newpost textarea {
+    padding-left: 20px;
 }
