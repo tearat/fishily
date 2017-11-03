@@ -1,5 +1,3 @@
-# glossary-for-ms
+# FISHILY (VUE)
 
-- Using php-adminer
-- Using vue.js
-- Created page vith input filter
+This is vue.js version of fishily site
