@@ -1,8 +1,9 @@
 <div id="parent" class="vertical-center">
     <div id="index">
         <a href="/"><h1>fishily opinion <img src="../img/logo.png" alt="" class="logo"></h1></a>
-        <h2><?php echo $data["title"]; ?></h2>
-        <p><?php echo $data["body"]; ?></p>
+        <h2><?php echo $data["date"]; ?> : <?php echo $data["title"]; ?></h2>
+<!--        <p><?php echo $data["body"]; ?></p>-->
+        <p><?php echo str_replace("\n", "<BR>", $data["body"]); ?></p>
         <div class="center">
             <a href="/img/<?php echo $data['img']; ?>" target="_blank">
                 <img src="/img/<?php echo $data['img']; ?>" alt="" class="img-post">

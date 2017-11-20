@@ -9,7 +9,13 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #222;
+    background-image: url("../img/bg.jpg");
+    animation: 20s bgmove linear infinite;
+}
+
+@keyframes bgmove {
+    0% { background-position: 0 0; }
+    100% { background-position: 300px 0; }
 }
 
 a { 
@@ -33,7 +39,7 @@ a {
 
 #index {
 /*    background-color: #eee;*/
-    background-color: #222;
+/*    background-color: #151515;*/
 }
 
 #index .logo {
@@ -41,7 +47,7 @@ a {
 }
 
 #index h1 {
-    background-color: #222;
+/*    background-color: #222;*/
     margin: 0;
     padding: 0;
     font-size: 100px;
@@ -52,7 +58,8 @@ a {
 
 #index h2 {
     margin: 0;
-    padding: 0;
+/*    padding: 0;*/
+    padding: 5px 0;
     color: #eee;
     background-color: firebrick;
     padding-left: 20px;
@@ -80,13 +87,12 @@ a {
 
 #index .post, #index .tag, #index .delete {
     color: #222;
-/*    text-transform: uppercase;*/
     text-decoration: none;
+    padding: 5px 0;
 }
 
 #index .post {
     font-weight: 700;
-/*    font-style: italic;*/
     padding-left: 20px;
 }
 
@@ -104,7 +110,9 @@ a {
 }
 
 #index .delete {
-    padding: 0 10px;
+/*    padding: 0 10px;*/
+    padding-right: 10px;
+    padding-left: 10px;
     font-style: normal;
 }
 
@@ -122,12 +130,14 @@ a {
     grid-template-columns: 1fr;
     
     margin-top: 25px;
+    padding: 5px 0 0 0;
 }
 
 #index .auth form {
     padding-left: 20px;
     display: grid;
     grid-template-columns: 70px 1fr;
+    margin-right: 5px;
 }
 
 #index .auth label {
@@ -137,12 +147,14 @@ a {
     display: inline;
     background-color: #eee;
     border: none;
+    margin-bottom: 5px;
 }
 
 #index .auth .logout {
     text-align: right;
     color: #eee;
     float: right;
+    padding-bottom: 5px;
     padding-right: 20px;
 }
 
