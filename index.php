@@ -1,39 +1,22 @@
 <?php
 
-    if ( $_GET["page"] == "new" )
-    {
-        if ( !empty($_COOKIE['session']) )
-        {
-            include "./pages/_head.html";
-            include "./pages/new.html";
-        }
-        else { 
-            header("location: /"); 
-        }
-    }
-    else if ( $_GET["page"] == "post" )
-    {
-        include "./php/database.php";
-        $database = new DATABASE;
-        $data = $database->load_post($_GET["id"]);
-        include "./pages/_head.html";
-        include "./pages/post.html";
-    }
-    else if ( $_GET["page"] == "bytag" )
-    {
-        include "./php/database.php";
-        $database = new DATABASE;
-        $data = $database->load_by_tag($_GET['tag']);
-        include "./pages/_head.html";
-        include "./pages/index.html";
-    }
-    else
-    {
-        include "./php/database.php";
-        $database = new DATABASE;
-        $data = $database->load_all();
-        include "./pages/_head.html";
-        include "./pages/index.html";
-    }
+//Загрузка smarty
+require_once '/smarty/Smarty.class.php';
+$smarty = new Smarty();
+
+//Загрузка класса приложения
+require_once '/app/app.class.php';
+$app = new App();
+
+//============================================================
+
+$app->check_admin();
+
+if ( $admin )
+{
+    $smarty->assign( 'admin', $admin );
+}
+
+$smarty->display( './views/_constructor.html' );
 
 ?>
