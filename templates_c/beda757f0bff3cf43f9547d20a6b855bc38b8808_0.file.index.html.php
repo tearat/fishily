@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-03-30 13:36:01
+/* Smarty version 3.1.30, created on 2018-03-30 14:15:17
   from "C:\home\openserver\OSPanel\domains\fishily.ar\views\index.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5abe13112dc6c5_19257412',
+  'unifunc' => 'content_5abe1c458ce7c5_95636093',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'beda757f0bff3cf43f9547d20a6b855bc38b8808' => 
     array (
       0 => 'C:\\home\\openserver\\OSPanel\\domains\\fishily.ar\\views\\index.html',
-      1 => 1522406135,
+      1 => 1522408516,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5abe13112dc6c5_19257412 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5abe1c458ce7c5_95636093 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div id="parent">
     <div id="index">
         <div id="app">
-            <a href="/"><h1>fishily opinion <img src="../img/logo.png" alt="" class="logo"></h1></a>
+            <a href="/"><h1>fishily <img src="../img/logo.png" alt="" class="logo"></h1></a>
             <ul>
                
                 <div class="v_post" v-if="post_visible">
@@ -93,9 +93,7 @@ function content_5abe13112dc6c5_19257412 (Smarty_Internal_Template $_smarty_tpl)
     </div>
 </div>
    
-
 <?php echo '<script'; ?>
  src="/js/index.vue.js"><?php echo '</script'; ?>
->
-<?php }
+><?php }
 }

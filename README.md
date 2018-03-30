@@ -24,9 +24,10 @@ Microblog for FISHily opinion :tropical_fish: :fish: :dolphin:
 ### 30.03.2018 UPD
 
 ```sh
-- There one simply page now, no redirections
-- VUE loads, sends, deletes posts
-- VUE-search by titles, bodies and tags
+- There one simply page now, no redirections;
+- VUE loads, sends, deletes posts;
+- VUE-search by titles, bodies and tags;
+- Renamed;
 ```
 
 # In plans: :whale2:

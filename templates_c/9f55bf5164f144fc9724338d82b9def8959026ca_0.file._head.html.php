@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-03-30 13:22:38
+/* Smarty version 3.1.30, created on 2018-03-30 14:15:17
   from "C:\home\openserver\OSPanel\domains\fishily.ar\views\_head.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5abe0fee206cc7_19760546',
+  'unifunc' => 'content_5abe1c458a0b59_97208355',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9f55bf5164f144fc9724338d82b9def8959026ca' => 
     array (
       0 => 'C:\\home\\openserver\\OSPanel\\domains\\fishily.ar\\views\\_head.html',
-      1 => 1522405340,
+      1 => 1522406444,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5abe0fee206cc7_19760546 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5abe1c458a0b59_97208355 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <meta charset="UTF-8">
 <title>fishily opinion</title>
@@ -34,7 +34,6 @@ function content_5abe0fee206cc7_19760546 (Smarty_Internal_Template $_smarty_tpl)
 <!--<?php echo '<script'; ?>
  src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"><?php echo '</script'; ?>
 >-->
-
 
 <link rel="stylesheet/less" type="text/css" href="/style/main.less" />
 <?php echo '<script'; ?>
