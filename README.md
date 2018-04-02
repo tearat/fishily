@@ -1,43 +1,46 @@
 # fishily :whale:
 
-Microblog for FISHily opinion :tropical_fish: :fish: :dolphin:
+Microblog :tropical_fish: :fish: :dolphin:
 
-### 20.10.2017 UPD 
+### 20.10.2017 upd 
 
 ```sh
-- Login;
-- Logout;
-- Add posts;
-- Delete posts;
-- View post on separate page;
-- View posts by tag;
+— Login;
+— Logout;
+— Add posts;
+— Delete posts;
+— View post on separate page;
+— View posts by tag;
 ```
 
-### 29.03.2018 UPD
+### 29.03.2018 upd
 
 ```sh
-- Views on Smarty now;
-- Code reduced;
-- LESS uses;
+— Views on Smarty now;
+— Code reduced;
+— LESS uses;
 ```
 
-### 30.03.2018 UPD
+### 30.03.2018 upd
 
 ```sh
-- There one simply page now, no redirections;
-- VUE loads, sends, deletes posts;
-- VUE-search by titles, bodies and tags;
-- Renamed;
+— There one simply page now, no redirections;
+— VUE loads, sends, deletes posts;
+— VUE search by titles, bodies and tags;
+— Renamed;
+```
+
+### 02.04.2018 upd
+
+```sh
+— Redesigned all;
+— Edit posts;
 ```
 
 # In plans: :whale2:
 
 ```sh
-- Redesign all;
-- Image upload;
-- Edit posts;
-- Text styling;
-- Paginaion;
+— Image upload;
+— Text styling;
+— Paginaion;
 ```
-
-> Should I even use Smarty?

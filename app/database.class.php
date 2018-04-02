@@ -47,7 +47,13 @@ class DATABASE
     public function create_post( $tag, $title, $body )
     {
         $date = date("d.m.Y");
-        $sql = "INSERT INTO `posts` (`tag`, `title`, `body`, `date`) VALUES ('$tag', '$title', '$body', '$date');";
+        $sql = "INSERT INTO `posts` (`tag`, `title`, `body`, `date`) VALUES ('$tag', '$title', '$body', '$date')";
+        $result = mysqli_query($this->mysql, $sql);
+    }
+    
+    public function update_post( $id, $tag, $title, $body )
+    {
+        $sql = "UPDATE `posts` SET tag = '$tag', title = '$title', body = '$body' WHERE `id`='$id'";
         $result = mysqli_query($this->mysql, $sql);
     }
     

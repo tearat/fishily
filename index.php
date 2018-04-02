@@ -10,13 +10,6 @@ $app = new App();
 
 //============================================================
 
-$app->check_admin();
-
-if ( $admin )
-{
-    $smarty->assign( 'admin', $admin );
-}
-
 $smarty->display( './views/_constructor.html' );
 
 ?>

@@ -2,18 +2,22 @@ var app = new Vue({
     el: '#app',
     data: {
         posts: [
-            {id: 1, title: 'data not loaded', text: "text", tag: 'error', date: "1.1.1"}
         ],
+        no_posts: false,
         search: '',
         search_tag: '',
         posts_visible: true,
-        post_visible: false,
+        post_visible: false, //
         add_post_btn_visible: true,
-        add_post_form_visible: false,
+        add_post_form_visible: false, //
+        edit_post_form_visible: false,
         show_id: 1,
-        post_tag: "",
+        post_tag: "мысли",
         post_title: "",
         post_body: "",
+        edit_tag: "мысли",
+        edit_title: "",
+        edit_body: "",
     },
     methods: {
         condition: function (title, body, filter) {
@@ -51,6 +55,18 @@ var app = new Vue({
             this.add_post_form_visible = false;
             this.posts_visible = true;
         },
+        show_edit_post_form: function() {
+            this.edit_tag = this.posts[this.show_id].tag;
+            this.edit_title = this.posts[this.show_id].title;
+            this.edit_body = this.posts[this.show_id].body;
+            this.post_visible = false;
+            this.edit_post_form_visible = true;
+            this.posts_visible = false;
+        },
+        close_edit_post: function() {
+            this.edit_post_form_visible = false;
+            this.posts_visible = true;
+        },
         load_posts: function() {
             var new_posts;
             $.ajax({
@@ -60,7 +76,16 @@ var app = new Vue({
             }).done(function(data) {
                 new_posts = JSON.parse(data);
             });
-            return new_posts;
+            if (new_posts)
+            {
+                this.no_posts = false;
+                return new_posts;
+            }
+            else
+            {
+                this.no_posts = true;
+                return [];
+            }
         },
         send_form: function() {
             $.ajax({
@@ -75,6 +100,21 @@ var app = new Vue({
             this.post_tag = "";
             this.post_title = "";
             this.post_body = "";
+        },
+        send_upd_form: function() {
+            var real_id = this.posts[this.show_id].id;
+            $.ajax({
+                type: "POST",
+                url: "/app/app.controller.php?action=update",
+                cache: false,
+                async: false,
+                data: { id: real_id, tag: this.edit_tag, title: this.edit_title, body: this.edit_body }
+            });
+            this.close_edit_post();
+            this.posts = this.load_posts();
+            this.edit_tag = "";
+            this.edit_title = "";
+            this.edit_body = "";
         },
         delete_post: function( id ) {
             $.ajax({

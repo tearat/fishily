@@ -9,7 +9,6 @@ body {
     margin: 0;
     padding: 0;
     background-image: url("../img/bg.jpg");
-//    animation: 20s bgmove linear infinite;
 }
 
 @keyframes bgmove {
@@ -24,193 +23,113 @@ body {
 a {
     text-decoration: none;
 }
-
-.vertical-center {
-    height: 100vh;
+button {
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    transition: 0.25s ease;
+    &:hover {
+        background-color: gold;
+        color: #111 !important;
+//        filter: brightness(1.25);
+    }
+//    &.btn_red:hover {
+//        background-color: firebrick;
+//    }
+//    &.btn_green:hover {
+//        background-color: forestgreen;
+//    }
+//    &.btn_gold:hover {
+//        background-color: gold;
+//        color: #111 !important;
+//    }
+}
+h1,h2,h3,p {
+    margin: 0;
+    padding: 0;
 }
 
-#parent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-width: 200px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-#index {
-    h1,
-    h2,
-    p,
-    ul,
-    li {
-        margin: 0;
-        padding: 0;
-    }
-    .logo {
-        height: 60px;
-    }
-    .v_post {
-        p {
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-    }
-    .new_post_btn {
-        font-style: italic;
-        color: #eee;
-        font-weight: 700;
-        display: grid;
-        grid-template-columns: 1fr;
-
-        padding: 5px;
-        margin-bottom: 20px;
-        
-        background-color: limegreen;
-        color: #eee;
-        font-size: 40px;
-        text-align: center;
-        background-color: royalblue;
-        &:hover {
-            filter: brightness(1.25);
-        }
-    }
+#app {
     h1 {
+        padding: 0;
+        margin: 20px;
+        text-align: center;
         font-size: 100px;
         font-style: italic;
         color: gold;
-        padding-left: 20px;
-        margin-bottom: 20px;
-        text-align: center;
     }
-    h2 {
-        padding: 5px 0;
-        color: #eee;
-        background-color: firebrick;
-        padding-left: 20px;
-        font-style: italic;
-        a {
-            color: white;
-        }
+    img {
+        height: 60px;
     }
-    p {
-        background-color: #eee;
-        padding-left: 20px;
-    }
-    .input_search,.input_search_tag {
-        padding: 5px;
-        padding-left: 20px;
-        display: inline-block;
-    }
-    .input_search {
-        width: 82.75%;
-    }
-    .input_search_tag {
-        width: 17.25%;
-        float: right;
-    }
-    ul {
-        list-style: none;
-    }
-    li {
-        background-color: gainsboro;
+    
+    .grid {
+        margin: 0 auto;
+        min-width: 200px;
+        max-width: 800px;
         display: grid;
-        grid-template-columns: 1fr 140px auto;
     }
-    .post,
-    .tag,
-    .delete {
-        color: #222;
-        text-decoration: none;
-        padding: 5px 0;
-    }
-    .post {
-        font-weight: 700;
-        padding-left: 20px;
-        &:hover {
-            background-color: sandybrown;
-        }
-    }
-    .tag {
-        text-align: right;
-        padding-right: 20px;
-        &:hover {
-            background-color: skyblue;
-        }
-    }
-    .delete {
-        padding-right: 20px;
-        padding-left: 20px;
-        font-style: normal;
-        &:hover {
-            background-color: brown;
-            color: white;
-        }
-    }
-    .auth {
-        background-color: firebrick;
-        font-style: italic;
-        color: #eee;
-        font-weight: 700;
-        display: grid;
+    
+    .grid_1 {
         grid-template-columns: 1fr;
-
-        margin-top: 25px;
-        padding: 5px 0 0 0;
-        form {
-            margin-left: 20px;
-            input {
-                margin-left: 20px;
-                width: 600px;
-            }
-        }
-        input {
-            display: inline;
-            background-color: #eee;
-            border: none;
-            margin-bottom: 5px;
-        }
-        .logout {
-            text-align: right;
-            color: #eee;
-            float: right;
-            padding-bottom: 5px;
-            padding-right: 20px;
-            &:hover {
-                filter: brightness(1.25);
-            }
-        }
-    }
-    .v_add_post {
-        padding: 0;
-        padding-top: 5px;
-        background-color: firebrick;
-        font-style: italic;
-        color: #eee;
-        font-weight: 700;
-        display: grid;
-        grid-template-columns: 1fr;
-        h2 {
-            padding-left: 20px;
-            margin-bottom: 0 !important;
-        }
-        input,select,textarea {
-            padding: 5px;
-            padding-left: 20px;
-            display: inline;
-            background-color: #eee;
-            border: none;
-        }
-        .btn_send {
-            background-color: forestgreen;
-            color: white;
-            text-align: center;
-            font-size: 30px;
+        button {
+            width: 100%;
             padding: 10px;
-            text-transform: uppercase;
-            &:hover {
-                filter: brightness(1.25);
+            font-style: italic;
+            font-size: 30px;
+            border: none;
+        }
+        .cell {
+            background-color: #ccc;
+            h2, p {
+                margin: 10px 20px;
             }
+            h2 {
+                font-size: 30px;
+                font-style: italic;
+            }
+            .body {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                border-top: 2px solid #111;
+            }
+            input, select, textarea {
+                border: none;
+                padding: 10px;
+                width: 100%;
+                background-color: #222;
+                color: white;
+                &:focus {
+                    background-color: gold;
+                    color: #111;
+                }
+            }
+            input {
+                width: calc(100% - 20px);
+            }
+            textarea {
+                width: calc(100% - 20px);
+                margin-bottom: -5px;
+            }
+        }
+    }
+    
+    .grid_2 {
+        grid-template-columns: 4fr 1fr;
+        input {
+            padding: 10px;
+        }
+    }
+    
+    .grid_3 {
+        width: 100%;
+        grid-template-columns: 1fr 140px 60px;
+        .row {
+            background-color: #eee;
+        }
+        .cell {
+            background-color: #eee;
+            cursor: pointer;
+            user-select: none;
         }
     }
 }

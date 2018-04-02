@@ -1,72 +1,14 @@
-<div id="parent">
-    <div id="index">
-        <div id="app">
-            <a href="/"><h1>fishily <img src="../img/logo.png" alt="" class="logo"></h1></a>
-            <ul>
-               
-                <div class="v_post" v-if="post_visible">
-                    {literal}
-                        <h2>{{posts[show_id].title}}</h2>
-                        <strong><p>tag: {{posts[show_id].tag}}, date: {{posts[show_id].date}}</p></strong>
-                        <p>{{posts[show_id].body}}</p>
-                    {/literal}
-                    <a href="#" v-on:click="close_post"><h2 style="text-align: center; margin-bottom: 20px">close</h2></a>
-                </div>
-                
-                {if $admin}
-                    <a href="#" v-on:click="show_add_post_form" class="new_post_btn" v-if="add_post_btn_visible">новый пост</a>
-                {/if}
-                
-                <div class="v_add_post" v-if="add_post_form_visible">
-                        <h2>Категория:</h2>
-                        <select name="tag" id="input_tag" v-model="post_tag">
-                            <option value="life">мысли</option>
-                            <option value="life">жизнь</option>
-                            <option value="life">кодинг</option>
-                            <option value="life">искусство</option>
-                            <option value="life">другое</option>
-                        </select>
-                        <h2>Заголовок:</h2>
-                        <input name="title" type="text" autocomplete="off" id="input_title" v-model="post_title">
-                        <h2>Текст:</h2>
-                        <textarea name="body" id="" cols="30" rows="4" id="input_text" v-model="post_body"></textarea>
-                        <a href="#" v-on:click="send_form" class="btn_send">создать!</a>
-                        <a href="#" v-on:click="close_add_post"><h2 style="text-align: center; margin-bottom: 20px">закрыть</h2></a>
-                </div>
-                
-                <!--                -->
-                
-                <div class="posts" v-if="posts_visible">
-                    <input type="search" placeholder="title or text..." class="input_search" v-model="search">
-                    <input type="search" placeholder="tag..." class="input_search_tag" v-model="search_tag">
-
-                    <li v-for="(post, index) in reversedPosts" 
-                        v-if="condition(post.title, post.body, search) && condition_tag(post.tag, search_tag)" >
-                        {literal}
-                            <a href="#" class="post" v-on:click="show_post(index)">{{post.date}}   |   {{post.title}}</a>
-                            <a href="#" class="tag" v-on:click="set_tag(post.tag)">{{post.tag}}</a>
-                        {/literal}
-                        {if $admin}
-                            <a href="#" class="delete" v-on:click="delete_post(post.id)">del</a>
-                        {/if}
-                    </li>
-                </div>
-                
-                
-            </ul>
-
-            <div class="auth">
-                {if $admin}
-                    <a href="/app/app.controller.php?action=logout" class="logout">выйти</a>
-                {else}
-                    <form action="/app/app.controller.php?action=login" method="post" name="form1">
-                        <label>Пароль:</label>
-                        <input type="password" name="pass" autocomplete="off">
-                    </form>
-                {/if}
-            </div>
-        </div>
-    </div>
-</div>
+<div id="app">
    
+    <a href="/"><h1>fishily <img src="../img/logo.png"></h1></a>
+    
+    {include file="./post.tpl"}
+   
+    {include file="./new_post.tpl"}
+    
+    {include file="./edit_post.tpl"}
+
+    {include file="./posts.tpl"}
+
+</div>
 <script src="/js/index.vue.js"></script>
