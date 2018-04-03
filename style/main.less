@@ -9,6 +9,7 @@ body {
     margin: 0;
     padding: 0;
     background-image: url("../img/bg.jpg");
+    animation: bgmove 125s linear infinite;
 }
 
 @keyframes bgmove {
@@ -31,18 +32,7 @@ button {
     &:hover {
         background-color: gold;
         color: #111 !important;
-//        filter: brightness(1.25);
     }
-//    &.btn_red:hover {
-//        background-color: firebrick;
-//    }
-//    &.btn_green:hover {
-//        background-color: forestgreen;
-//    }
-//    &.btn_gold:hover {
-//        background-color: gold;
-//        color: #111 !important;
-//    }
 }
 h1,h2,h3,p {
     margin: 0;
@@ -116,20 +106,31 @@ h1,h2,h3,p {
     .grid_2 {
         grid-template-columns: 4fr 1fr;
         input {
+            background-color: #ccc;
             padding: 10px;
+            border: none;
+            &:nth-child(1) {
+                border-right: 1px solid grey;
+            }
+            &:focus {
+                outline: none;
+                background-color: gold;
+                color: #111;
+            }
         }
     }
     
     .grid_3 {
         width: 100%;
         grid-template-columns: 1fr 140px 60px;
-        .row {
-            background-color: #eee;
-        }
         .cell {
-            background-color: #eee;
+            background-color: white;
             cursor: pointer;
             user-select: none;
+            &:hover {
+                background-color: gold;
+                color: #111;
+            }
         }
     }
 }

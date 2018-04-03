@@ -20,7 +20,7 @@
             {/literal}
         </div>
         <div class="cell" v-if="no_posts">
-            <p><strong>error: database is empty</strong></p>
+            <p>error: database is empty</p>
         </div>
     </div>
 </div>

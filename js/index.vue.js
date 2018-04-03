@@ -97,7 +97,7 @@ var app = new Vue({
             });
             this.close_add_post();
             this.posts = this.load_posts();
-            this.post_tag = "";
+            this.post_tag = "мысли";
             this.post_title = "";
             this.post_body = "";
         },
